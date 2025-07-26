@@ -19,7 +19,7 @@ import { useToast } from "@/hooks/use-toast"
 
 export function Header() {
   const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true) // Corrected: useState(true)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
   const pathname = usePathname()
@@ -136,7 +136,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         {/* Left: Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2 ml-4">
           <PenTool className="h-6 w-6" />
           <span className="text-xl font-bold">Penora</span>
         </Link>
