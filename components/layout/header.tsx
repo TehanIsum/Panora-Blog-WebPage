@@ -19,7 +19,7 @@ import { useToast } from "@/hooks/use-toast"
 
 export function Header() {
   const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true) // Corrected: useState(true)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
   const pathname = usePathname()

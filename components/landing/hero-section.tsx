@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link" // Ensure Link is imported
 import { Button } from "@/components/ui/button"
-import { Sparkles, Globe, Brain, PenTool } from "lucide-react" // Added missing Lucide-React imports
+import { Sparkles, Globe, Brain, PenTool } from "lucide-react"
 
 export function HeroSection() {
-  // Changed to named export
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -47,11 +47,19 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-10 flex flex-col sm:flex-row gap-4"
         >
-          <Button size="lg" className="px-8 py-3 text-lg">
-            Start Writing <PenTool className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" className="px-8 py-3 text-lg">
+            <Link href="/create">
+              {" "}
+              {/* This link already points to the create post page */}
+              Start Writing <PenTool className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="px-8 py-3 text-lg bg-transparent">
-            Explore Posts <Globe className="ml-2 h-5 w-5" />
+          <Button asChild variant="outline" size="lg" className="px-8 py-3 text-lg bg-transparent">
+            <Link href="/#latest-posts">
+              {" "}
+              {/* Changed to link to posts section */}
+              Explore Posts <Globe className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </motion.div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
